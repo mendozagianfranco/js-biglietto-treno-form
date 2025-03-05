@@ -9,15 +9,67 @@
         <!-- /Pagina di stile principale -->
     </head>
     <body>
-        <form action="#">
-            <label for="km-user">Km da percorrere</label>
-            <input type="text" name="" id="km-user" />
-            <label for="age-user">Età passeggero</label>
-            <input type="text" name="" id="age-user" />
-            <button>Invia</button>
-        </form>
         <div class="container">
-            <span id="price-text"></span>
+            <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+            <form action="#">
+                <div class="container-input flex">
+                    <div class="input-form flex">
+                        <label for="name-user">Nome Cognome</label>
+                        <input type="text" name="name" id="name-user" />
+                    </div>
+
+                    <div class="input-form flex">
+                        <label for="km-user">Km da percorrere</label>
+                        <input type="number" name="km" id="km-user" />
+                    </div>
+
+                    <div class="input-form flex">
+                        <label for="age-user">Fascia di d'età</label>
+                        <select name="age" id="age-user">
+                            <option value="maggiorenne">Maggiorenne</option>
+                            <option value="minorenne">Minorenne</option>
+                            <option value="over65">Over 65</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="btn-form">
+                    <button type="submit" class="btn">Genera</button>
+                    <button type="button" id="btn-cancel" class="btn">
+                        Annulla
+                    </button>
+                </div>
+            </form>
+            <div class="container-ticket">
+                <h2>IL TUO BIGLIETTO</h2>
+                <div class="card-ticket">
+                    <h3 class="card-title">DETTAGLIO PASSEGGERI</h3>
+                    <div class="information-ticket flex">
+                        <div class="left-ticket flex">
+                            <h3>NOME PASSEGGERO</h3>
+                            <p id="name-ticket"></p>
+                        </div>
+                        <div class="right-ticket flex">
+                            <div class="details-ticket flex">
+                                <p class="details-title">Offerta</p>
+                                <p id="class-ticket"></p>
+                            </div>
+                            <div class="details-ticket flex">
+                                <p class="details-title">Carrozza</p>
+                                <p id="carriage-number"1</p>
+                            </div>
+                            <div class="details-ticket flex">
+                                <p class="details-title">Codice CP</p>
+                                <p id="code-cp"></p>
+                            </div>
+                            <div class="details-ticket flex">
+                                <p class="details-title">Costo biglietto</p>
+                                <p id="price-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- Javascript -->
         <script src="js/script.js"></script>
