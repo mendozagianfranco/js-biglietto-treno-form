@@ -1,6 +1,7 @@
 const kmElement = document.getElementById('km-user');
 const ageElement = document.getElementById('age-user');
 const formElement = document.querySelector('form');
+const priceText = document.getElementById('price-text');
 
 formElement.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -37,10 +38,14 @@ formElement.addEventListener('submit', function (e) {
         let formattedPrice = basePrice.toFixed(2);
 
         //stampa del prezzo
-        console.log(`Il prezzo finale del biglietto è ${formattedPrice} €`);
+        priceText.innerText = `Il prezzo finale del biglietto è ${formattedPrice} €`;
 
-    } else {
-        console.error('I dati inseriti non sono corretti');
+    } else if (!isDataValid) {
+        priceText.innerText = 'I dati inseriti non numeri';
+    } else if (!isDataBiggerThanZero) {
+        priceText.innerText = 'I dati inseriti devono essere maggiore di 0';
+    } else if (!isAgeValid) {
+        priceText.innerText = 'L\'età deve essere compresa tra 5 e 99';;
     }
 })
 
